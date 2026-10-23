@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install packages
+        run: npm install --no-audit --no-fund
+      - name: Rebuild the per-person database schema
+        run: npm run gen:schema
+      - name: The generated schema must be committed
+        run: git diff --exit-code -- src/tenant-schema.generated.ts
+      - name: TypeScript check
+        run: npm run typecheck
+      - name: Mini App syntax check
+        run: |
+          for f in public/*.js; do
+            node --input-type=module --check < "$f" || exit 1
+          done

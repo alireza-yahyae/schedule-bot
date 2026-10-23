@@ -1,0 +1,10 @@
+node_modules/
+.wrangler/
+.dev.vars
+.env
+*.log
+wrangler.toml
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

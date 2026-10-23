@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="1100" height="520" font-family="Vazirmatn, 'Segoe UI', Tahoma, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#64748B"/></marker>
+  </defs>
+  <rect width="1100" height="520" rx="20" fill="#F8FAFF" stroke="#DCE5FF"/>
+  <text x="550" y="44" font-size="24" font-weight="800" fill="#1F2937" text-anchor="middle">How it works</text>
+
+  <rect x="40" y="110" width="200" height="90" rx="16" fill="#E3F1FF" stroke="#4F8CFF" stroke-width="2"/><text x="140.0" y="151.0" font-size="19" font-weight="700" fill="#1F2937" text-anchor="middle">Telegram</text><text x="140.0" y="175.0" font-size="14" fill="#4B5563" text-anchor="middle">you, your partner</text>
+  <rect x="40" y="300" width="200" height="90" rx="16" fill="#EEE8FF" stroke="#8B5CF6" stroke-width="2"/><text x="140.0" y="341.0" font-size="19" font-weight="700" fill="#1F2937" text-anchor="middle">Mini App</text><text x="140.0" y="365.0" font-size="14" fill="#4B5563" text-anchor="middle">HTML + JS (static files)</text>
+
+  <rect x="380" y="190" width="280" height="130" rx="16" fill="#FFFFFF" stroke="#4F8CFF" stroke-width="2"/><text x="520.0" y="251.0" font-size="19" font-weight="700" fill="#1F2937" text-anchor="middle">Cloudflare Worker</text><text x="520.0" y="275.0" font-size="14" fill="#4B5563" text-anchor="middle">webhook · API · scheduler</text>
+  <text x="520" y="310" font-size="13" fill="#6B7280" text-anchor="middle">gateway.ts decides whose data a message belongs to</text>
+
+  <rect x="800" y="90" width="260" height="100" rx="16" fill="#E8FBF3" stroke="#10B981" stroke-width="2"/><text x="930.0" y="136.0" font-size="19" font-weight="700" fill="#1F2937" text-anchor="middle">D1 database</text><text x="930.0" y="160.0" font-size="14" fill="#4B5563" text-anchor="middle">owner data + list of users</text>
+  <rect x="800" y="230" width="260" height="100" rx="16" fill="#FFF4E0" stroke="#F59E0B" stroke-width="2"/><text x="930.0" y="276.0" font-size="19" font-weight="700" fill="#1F2937" text-anchor="middle">Durable Objects</text><text x="930.0" y="300.0" font-size="14" fill="#4B5563" text-anchor="middle">one private SQLite per person</text>
+  <rect x="380" y="400" width="280" height="80" rx="16" fill="#FDE8EC" stroke="#EF4444" stroke-width="2"/><text x="520.0" y="436.0" font-size="19" font-weight="700" fill="#1F2937" text-anchor="middle">Cron · every minute</text><text x="520.0" y="460.0" font-size="14" fill="#4B5563" text-anchor="middle">sends due reminders</text>
+
+  <path d="M240 150 L380 230" stroke="#64748B" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+  <text x="270" y="170" font-size="13" fill="#64748B">messages</text>
+  <path d="M380 290 L240 160" stroke="#64748B" stroke-width="2.5" fill="none" marker-end="url(#a)" stroke-dasharray="6 5"/>
+  <text x="300" y="228" font-size="13" fill="#64748B">reminders</text>
+  <path d="M240 345 L380 285" stroke="#64748B" stroke-width="2.5" fill="none" marker-start="url(#a)" marker-end="url(#a)"/>
+  <text x="262" y="338" font-size="13" fill="#64748B">/api</text>
+  <path d="M660 235 L800 150" stroke="#64748B" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+  <path d="M660 275 L800 280" stroke="#64748B" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+  <path d="M520 400 L520 320" stroke="#64748B" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+  <text x="700" y="400" font-size="14" fill="#6B7280">Free plan: about 20 people. Raise MAX_USERS on a paid plan.</text>
+</svg>

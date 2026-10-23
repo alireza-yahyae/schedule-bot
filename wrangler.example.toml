@@ -1,0 +1,41 @@
+# Template. setup.ps1 copies this file to wrangler.toml and fills in your own values.
+# wrangler.toml itself is NOT stored in git (it holds your personal database id and address).
+name = "schedule-bot"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+
+# Run the scheduler every minute (Cloudflare cron always uses UTC; that is fine,
+# because the bot converts times to your own timezone itself).
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+# How many people may use the bot. The free Cloudflare plan handles about 20; with the paid plan raise it (see docs/fa/SETUP-PUBLIC.fa.md).
+MAX_USERS = "20"
+# Public address of this Worker. The Mini App button in Telegram opens it.
+APP_URL = "https://schedule-bot.YOUR-NAME.workers.dev"
+
+# The Mini App (HTML/CSS/JS files in the "public" folder).
+# Requests to /api/*, /webhook and /health go to the Worker code; everything else is a static file.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*", "/webhook", "/health"]
+
+# Public bot: every person gets a private database (a Durable Object with its own SQLite storage).
+[[durable_objects.bindings]]
+name = "TENANT"
+class_name = "Tenant"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Tenant"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "schedule-bot-db"
+database_id = "REPLACE_WITH_YOUR_DATABASE_ID"
+migrations_dir = "migrations"
+
+[observability]
+enabled = true
