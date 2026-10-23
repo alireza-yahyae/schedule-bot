@@ -28,7 +28,7 @@ The interface language is **Persian (Farsi)** with a Jalali calendar; the code a
 > It runs on Cloudflare's **free plan**. No server to rent, no computer that must stay on.
 
 <div align="center">
-<img src="docs/images/screens.svg" alt="Mini App screens: Today, Week and Settings" width="100%">
+
 <br><sub>Illustration of the Mini App (Today · Week · Settings). The real app follows your Telegram light or dark theme.</sub>
 </div>
 
